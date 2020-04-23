@@ -7,6 +7,6 @@ tags: starter, creation
 ---
 This is the first time i'm using netlify to generate a CMS with Preact. So far, so good, but there are a couple of thing to do
 
-- Change the template
-- Change the blog title or the template title, don't know
-- Connect as a card with other site. 
+- [x] Change the template
+- [x] Change the blog title or the template title, don't know
+- [ ] Connect as a card with other site. 
