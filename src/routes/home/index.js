@@ -17,19 +17,22 @@ const Home = () => {
 	},[]);
 
 	return (
-		<div class={style.home}>
-			<div class={style.about}>
-				<div class={style.imageContainer}>
-					<div class={style.image} />
-				</div>
-				<div class={style.quote}>
-					<div class={style.details}>
-						Joe, developer since 2002.
+		<div class="container">
+			<div class="row">
+				<div class={style.home}>
+					<div class={style.about}>
+						<div class={style.imageContainer}>
+							<div class={style.image} />
+						</div>
+						<div class={style.quote}>
+							<div class={style.details}>
+								Joe, developer since 2002.
+							</div>
+							<div class={style.author}>- Some Info</div>
+						</div>
 					</div>
-					<div class={style.author}>- Some Info</div>
 				</div>
 			</div>
-
 		</div>
 	);
 };

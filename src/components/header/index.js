@@ -3,6 +3,11 @@ import { Link } from 'preact-router/match';
 import style from './style';
 
 const Header = () => (
+	<div class="container">
+		<div class="row">
+		&nbsp;
+		</div>
+	</div>
 	<header class="">
 		<div class="container">
 			<div class="jumbotron">

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&text=Joe%20Mondragon");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 
 html, body {
 	height: 100%;
@@ -6,7 +6,7 @@ html, body {
 	padding: 0 1vw;
 	margin: 0;
 	background: #FAFAFA;
-	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-family: 'Roboto Condensed','Helvetica Neue', arial, sans-serif;
 	font-weight: 400;
 	color: #444;
 	-webkit-font-smoothing: antialiased;
