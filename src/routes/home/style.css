@@ -14,8 +14,9 @@
 .image {
 	height: 30vw;
 	background-image: url(/assets/joeLogoStroke.png);
-	background-size: cover;
-	background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: cover;
+	background-position: center;*/
 }
 
 .quote {
