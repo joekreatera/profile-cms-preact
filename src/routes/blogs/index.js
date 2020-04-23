@@ -6,9 +6,14 @@ import style from './style';
 const blogs = (props) => {
 	const [data, isLoading] = usePrerenderData(props);
 	return (
-		<div class={style.pageBlogs}>
-			<h1 class={style.pageTitle}>My Blogs</h1>
-			{ getBlogsListing(data, isLoading) }
+
+		<div class="container">
+			<div class="row">
+				<div class={style.pageBlogs}>
+					<h1 class={style.pageTitle}>My Blogs</h1>
+					{ getBlogsListing(data, isLoading) }
+				</div>
+		</div>
 		</div>
 	);
 };
