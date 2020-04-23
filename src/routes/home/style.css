@@ -13,7 +13,7 @@
 
 .image {
 	height: 30vw;
-	background-image: url(/assets/profile.jpg);
+	background-image: url(/assets/joeLogoStroke.png);
 	background-size: cover;
 	background-position: center;
 }
@@ -88,4 +88,3 @@
 		padding: 0;
 	}
 }
-
