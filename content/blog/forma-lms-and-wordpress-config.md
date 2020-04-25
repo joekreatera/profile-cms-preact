@@ -4,13 +4,16 @@ date: 2020-04-25T12:03:44.210Z
 subtitle: A great way to integrate content and LMS
 tags: lms wordpress cms
 ---
+![forma.lms](/assets/untitled.png "forma.lms")
+
+![wordpress](/assets/untitled-1.png "wordpress")
 
 The **education** as we know it is changing. Times that remind us how to outperform ourselves with different ways or even disruptions are just around the corner. Is the moment for the world to get a reality check and see for ourselves what are the options for **learning** and **training**. 
 
 As one of the projects I'm working on, a **LMS was needed**. This was not a requirement from the very beginning so a couple of risks (we knew they were risks when we had this challenge) were taken:
 
 1. A server was bought to get the site going. We did not think about a serverless stack or even lambda functions on Amazon, just to be able to do some crazy configuration stuff (one thing that has no happened yet).
-2.  The plaform used for the site in general was Wordpressed due to the very fast nature of the "get out and publish content" way of the software. IT Team had already experienced WP sites previously so it was a good call.
+2. The plaform used for the site in general was Wordpressed due to the very fast nature of the "get out and publish content" way of the software. IT Team had already experienced WP sites previously so it was a good call.
 
 Forma.lms is a system to implement a learning  management system in a private server. It has an organization behind and has been actively promoted for 5 years approximately. 
 
@@ -46,16 +49,15 @@ After some research hours, this plugin appeared on the screen:
 I thought that someone was watching us, becuase it was so designed for us. And this is what made me write this POST, the following part. It might sound easy, but I did not found any documentation that takes the developer through it. So, here it comes the configuration story:
 
 1. An update was needed. To be clear, the steps to update FORMA.LMS are here:
-    - [Installation and upgrade](https://www.formalms.org/reference-guide/installation-and-upgrade/installation-and-upgrade-2.html)
-    - This area of the site is probably the most important: [Reference Guide](https://www.formalms.org/reference-guide.html)
+
+   * [Installation and upgrade](https://www.formalms.org/reference-guide/installation-and-upgrade/installation-and-upgrade-2.html)
+   * This area of the site is probably the most important: [Reference Guide](https://www.formalms.org/reference-guide.html)
 2. After the update (that completes in seconds), log in as an admin and open the settings area
 
-    ![Forma%20lms%20and%20Wordpress%20config/Untitled%202.png](Forma%20lms%20and%20Wordpress%20config/Untitled%202.png)
-
+   ![Forma.lms settings](/assets/untitled-2.png "Forma.lms settings")
 3. Open "OTHER OPTIONS" just in the header of configuration page (yes, it is a menu, not a title)
 
-    ![Forma%20lms%20and%20Wordpress%20config/Untitled%203.png](Forma%20lms%20and%20Wordpress%20config/Untitled%203.png)
-
+   ![Formal.lms settings menu](/assets/untitled-3.png "Formal.lms settings menu")
 4. Do click on API and AUTHENTICATION
 5. Enable SSO with a third party software though a token
 6. Set the token secret for the token hash (you will be needing this on wordpress)
@@ -67,9 +69,9 @@ I thought that someone was watching us, becuase it was so designed for us. And t
 12. Log in to your wordpress
 13. Install Forma.lms connector on plugins. It will appear on the side once it is installed and activated
 
-    ![Forma%20lms%20and%20Wordpress%20config/Untitled%204.png](Forma%20lms%20and%20Wordpress%20config/Untitled%204.png)
+    ![FLC wordpress settings](/assets/untitled-4.png)
+14. In the tabs, set in order the needed fields
 
-14.  In the tabs, set in order the needed fields
     1. Address: the full URL of the domain in which the index.php if forma.lms is. Including the http or https protocol. 
     2. Key: API key you just set
     3. Secret: API secret you just set. 
@@ -84,4 +86,4 @@ So far this has been my experience with forma.lms. We're starting rolling out th
 
 Happy developing!
 
-![joeLogoStroke.png](joeLogoStroke.png)
+![joe logo](/assets/joeLogoStroke.png)
