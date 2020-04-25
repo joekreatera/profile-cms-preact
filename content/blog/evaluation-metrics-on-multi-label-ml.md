@@ -107,7 +107,7 @@ When having experimentation with cases in which the classification threshold is 
 
 To get it, first the True Positive Rate and False Positive Rate for each case are calculated.
 
-![formula](https://render.githubusercontent.com/render/math?math=TruePositiveRate\ =\frac{TP}{TP%2bFN}\ ,\ FalsePositiveRate\ =\frac{FP}{FP%2bTN}\)
+![formula](https://render.githubusercontent.com/render/math?math=TruePositiveRate\ =\frac{TP}{TP%2bFN} , FalsePositiveRate\ =\frac{FP}{FP%2bTN})
 
 Then, order the cases by False Positive Rate and get the interpolated graph. Once it is done, get the integral of TruePositiveRate  = f(FalsePositiveRate) function, and the result is the AUC index.  A higher AUC means a successful method.  
 
