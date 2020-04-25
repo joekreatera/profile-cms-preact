@@ -15,8 +15,8 @@ const Header = () => (
 					<h1>Welcome to the projects showcase</h1>
 					<p>
 						<nav>
-							<Link activeClassName={style.active} href="http://joe.videogamesacademy.com">Back</Link>
-							|
+							<a class="btn btn-info" href="http://joe.videogamesacademy.com">Back</a>
+							<br/>
 							<Link activeClassName={style.active} href="/contact">Contact me</Link>
 						</nav>
 					</p>
