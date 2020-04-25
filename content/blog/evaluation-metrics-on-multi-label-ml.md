@@ -71,7 +71,7 @@ This metric allows measurement of precision and sensitivity applying a harmonic 
 The recall and precision could be graphed for each of the instances.  Sorting the elements according to recall and then replacing each precision value with the greatest value to the right will set everything for the method to work.
 As recall cannot reach a number higher than 1, 11 levels (commonly) are taken into practice (from 0 to 1, each 0.1, 11 indices). Applying the following formula:
 
-![formula](https://render.githubusercontent.com/render/math?math=Average\ precision=\int_{0}^{1}P\left(r\right)dr)
+![](/assets/eq4.jpg)
 
 **P(r)** is the precision at recall r. Mathematically, and taking into account the method described previously, the formula P(r) becomes:
 
