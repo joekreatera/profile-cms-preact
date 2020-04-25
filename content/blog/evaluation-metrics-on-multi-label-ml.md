@@ -75,7 +75,7 @@ As recall cannot reach a number higher than 1, 11 levels (commonly) are taken in
 
 **P(r)** is the precision at recall r. Mathematically, and taking into account the method described previously, the formula P(r) becomes:
 
-max p( ![formula](https://render.githubusercontent.com/render/math?math=\widetilde{r}) ) provided that  ![formula](https://render.githubusercontent.com/render/math?math=\widetilde{r})  ![formula](https://render.githubusercontent.com/render/math?math={r})
+max p(rtilde) provided that rtilde > r
 
 With the integral defined from 0 to 1 with dr=1/11 (0 and 1 inclusive in the domain)0, P(r) is the precision or height of the graph defined at r. The graph becomes a series of rectangles and the areas are dr*P(r) . Then:
 
