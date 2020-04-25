@@ -71,7 +71,7 @@ This metric allows measurement of precision and sensitivity applying a harmonic 
 The recall and precision could be graphed for each of the instances.  Sorting the elements according to recall and then replacing each precision value with the greatest value to the right will set everything for the method to work.
 As recall cannot reach a number higher than 1, 11 levels (commonly) are taken into practice (from 0 to 1, each 0.1, 11 indices). Applying the following formula:
 
-![](/assets/eq4.jpg)
+![](/assets/eq4.png)
 
 **P(r)** is the precision at recall r. Mathematically, and taking into account the method described previously, the formula P(r) becomes:
 
@@ -79,13 +79,13 @@ max p(rtilde) provided that rtilde > r
 
 With the integral defined from 0 to 1 with dr=1/11 (0 and 1 inclusive in the domain)0, P(r) is the precision or height of the graph defined at r. The graph becomes a series of rectangles and the areas are dr*P(r) . Then:
 
-![formula](https://render.githubusercontent.com/render/math?math=Average\ precision=\ \sum_{0}^{i=10}{\frac{1}{11}P(r_i)\ =\ }\frac{1}{11}\sum_{0}^{i=10}{P(r_i)\ })
+![](/assets/eq1.png)
 
 ## Hamming loss
 
 Being created for the multi-label case, it relates the total number of instances and labels, identifying the cases in which a bad assignment was done (whether it is FN or FP). This method will count only when the predicted label and real label are different.
 
-![formula](https://render.githubusercontent.com/render/math?math=Hamming\ Loss=\ \frac{1}{\left|N\right|\left|L\right|}\sum_{0}^{i=\left|N\right|}{\sum_{0}^{i=\left|L\right|}{Y_{i,j}{xor}{Y^\prime}_{i,j}}}) 
+![](/assets/eq2.png)
 
 Where:
 
@@ -107,7 +107,7 @@ When having experimentation with cases in which the classification threshold is 
 
 To get it, first the True Positive Rate and False Positive Rate for each case are calculated.
 
-![formula](https://render.githubusercontent.com/render/math?math=TruePositiveRate\ =\frac{TP}{TP%2bFN} , FalsePositiveRate\ =\frac{FP}{FP%2bTN})
+![](/assets/eq3.png)
 
 Then, order the cases by False Positive Rate and get the interpolated graph. Once it is done, get the integral of TruePositiveRate  = f(FalsePositiveRate) function, and the result is the AUC index.  A higher AUC means a successful method.  
 
