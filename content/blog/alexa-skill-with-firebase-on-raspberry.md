@@ -229,7 +229,7 @@ Also, the requirement needed Togo to smile. This had to be made with specific pi
 So a more useful set of classes were built:
 
 
-![/assets/togo%20Untitled%2020.png](/assets/togo%20Untitled%2020.png)
+![/assets/togo-untitled-20.png](/assets/togo-untitled-20.png)
 
 Neopixel: Main class that exposes all the methods via a static interface for a SingleTon pattern (inside).
 
