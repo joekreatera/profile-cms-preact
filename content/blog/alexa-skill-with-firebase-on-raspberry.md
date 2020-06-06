@@ -288,6 +288,10 @@ There are some important modes in NeopixelLogicModules:
 
 In a very general way, this was the project development. Should you have any issues, questions or suggestions, you can always email me to: [joe@videogamesacademy.com](mailto:joe@videogamesacademy.com) or using this [contact form](https://cms.joe.videogamesacademy.com/contact).
 
+---
+## You can check the actual product site (spanish) at: [TOGO BOT](https://www.togobot.com.mx/)
+
+---
 Thanks for reading!
 
 ![/assets/joeLogoStroke.png](/assets/joeLogoStroke.png)
