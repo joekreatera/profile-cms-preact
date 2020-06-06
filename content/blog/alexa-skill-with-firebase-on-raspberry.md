@@ -6,8 +6,6 @@ subtitle: Project that implemented a Alexa, Google, Fadecandy, Neopixel,
 cover: /assets/togo.png
 tags: neopixel raspberry amazon alexa polly node.js
 ---
-# Assistant Alexa skill development
-
 Recently a group of enthusiasts came with the idea of generating a parents **assistant** that could take care of **children's activities** at noon or at morning. One of the requirements was that this "little guy" should **talk and receive command voice**s. It was decided that prototyping such a system using a **raspberry, Amazon Alexa and a Google Firestore Database** would be the best option.
 
 This was all done during COVID19 crisis in Mexico. The project development suddenly became harder due to the distance and safety rules.
@@ -229,3 +227,67 @@ Being easy to wire, an issue came out. Each of the RINGS would be wired separate
 Also, the requirement needed Togo to smile. This had to be made with specific pixel lighting, and the basic library provided is just a general data train that is sent to USB.
 
 So a more useful set of classes were built:
+
+
+![/assets/togo%20Untitled%2020.png](/assets/togo%20Untitled%2020.png)
+
+Neopixel: Main class that exposes all the methods via a static interface for a SingleTon pattern (inside).
+
+NeopixelLogicModule: class that represents each of the lines of Fadecandy strings (in this case, rigns).
+
+PixelColor: abstraction of a color with R,G,B components.
+
+NeopixelConstants: constants used everywhere. 
+
+So the way to work of these classes: user code should jjust refer to Neopixel. This class initializes with a JSON similar to this one:
+
+```jsx
+var configData ={
+    ledsPerStrip:16,
+    strips:[
+      {
+        mode:NeopixelConstants.PIXEL_MODE,
+        loopMode:NeopixelConstants.PING_PONG,
+        mainColor:PixelColor.CYAN,
+        secondaryColor:PixelColor.CYAN,
+        leds:16,
+        chaseWidth:4,
+        pixelArray:[0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+     },
+      {
+        mode:NeopixelConstants.EYE_BLINK_MODE,
+        loopMode:NeopixelConstants.FORWARD,
+        mainColor:PixelColor.CYAN,
+        secondaryColor:PixelColor.CYAN,
+        leds:16,
+        chaseWidth:4
+     },
+     {
+       mode:NeopixelConstants.EYE_BLINK_MODE,
+       loopMode:NeopixelConstants.FORWARD,
+       mainColor:PixelColor.CYAN,
+       secondaryColor:PixelColor.CYAN,
+       leds:16,
+       chaseWidth:4
+    },
+
+    ]
+};
+```
+
+After it is initialized, user code could change each of the strips/rings separetly or together. Neopixel code offers an additional layer of abstraction to show, with 3 rings, a happy face, sad face and idle face. 
+
+There are some important modes in NeopixelLogicModules:
+
+- BreathMode: gradients from one color to the other in time.
+- ChaseMode: a set if pixels going throught the strip/ring as chasing each other. The chase mode has a chase_width variable that determines how many pixels will be going after. The other pixels in the strip will just set to 0.
+- Breath-Chase Mode: is a layered mode in which the pixels not being used by Chase mode, are breathing.
+- Freestyle Mode: a syncFunction and GetColor are callback functions that will be called so user code can change arbitrarily the display. Cjanges the color,  but won't specify the indexes of the data.
+- EyeBlink Mode: the rings are taken from 0 to 15 indexes and divided in halves. After certain amound of seconds they start to turn off from the first quarter index to middle and 0. At the same time, there will be turning off from the third-quarter index to the midlle and full index.
+- Pixel mode: an array is passed with the pixels that should be in color. 1 for color , 0 for no color. The color will be taken from main module color.
+
+In a very general way, this was the project development. Should you have any issues, questions or suggestions, you can always email me to: [joe@videogamesacademy.com](mailto:joe@videogamesacademy.com) or using this [contact form](https://cms.joe.videogamesacademy.com/contact).
+
+Thanks for reading!
+
+![/assets/joeLogoStroke.png](/assets/joeLogoStroke.png)
