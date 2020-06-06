@@ -52,22 +52,15 @@ It should be clear that for every component in the Cloud, there is a client that
 With this definition given, development was oficially started and followed the following steps:
 
 1. Test Amazon SDK and raspberry integration
-    1. *Installed a Windows test with instructions provided directly from Amazon* ([instructions here](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/windows-64.html)): the first challenge was to understand the Amazon Alexa Solution components. Reader can analyze a diagram on this section (really helpful as this is hard to find on web). Cygwin environment was needed as Amazon has the process for a linux based computer (easy and you can go forward with no issues). A certain minor setback is taking the config.json key from Amazon website ([here](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product.html)). Any folk implementing this could make the process before or after installing cygwin, but must be prior to hitting the "MAKE" command to build Alexa Base Listener.
+    
+   1. *Installed a Windows test with instructions provided directly from Amazon* ([instructions here](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/windows-64.html)): the first challenge was to understand the Amazon Alexa Solution components. Reader can analyze a diagram on this section (really helpful as this is hard to find on web). Cygwin environment was needed as Amazon has the process for a linux based computer (easy and you can go forward with no issues). A certain minor setback is taking the config.json key from Amazon website ([here](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product.html)). Any folk implementing this could make the process before or after installing cygwin, but must be prior to hitting the "MAKE" command to build Alexa Base Listener.
+![/assets/togo%20Untitled%202.png](/assets/togo%20Untitled%202.png)
+alexa and developer components. Order in which they are called.  
 
-        ![/assets/togo%20Untitled%202.png](/assets/togo%20Untitled%202.png)
+   2. Test the Amazon Alexa service by configuring a Skill. Amazon has an app for that!. Alexa App allows you to check that is going on with your Alexa. The config.json donde is linked to your account. As long as you keep the same email, Alexa will know who's the developer, and your "new device" (simulated windows account). There's also a web that shows the activated skills, some examples and the last recognized commands: [alexa.amazon.com](http://alexa.amazon.com). One of the problems encountered was that instructions specifies that one should wait for this screen: ![/assets/togo%20Untitled%203.png](/assets/togo%20Untitled%203.png) But the text just goes by giving a screen of "can't connect yet". So, whenever a developer wants to find the code, he should scroll in search of this segment.
+    After this, the testing is very easy.
 
-        alexa and developer components. Order in which they are called.
-
-        One of the problems encountered was that instructions specifies that one should wait for this screen:
-
-        ![/assets/togo%20Untitled%203.png](/assets/togo%20Untitled%203.png)
-
-        But the text just goes by giving a screen of "can't connect yet". So, whenever a developer wants to find the code, he should scroll in search of this segment.
-
-
-        After this, the testing is very easy.
-
-    2. Test the Amazon Alexa service by configuring a Skill. Amazon has an app for that!. Alexa App allows you to check that is going on with your Alexa. The config.json donde is linked to your account. As long as you keep the same email, Alexa will know who's the developer, and your "new device" (simulated windows account). There's also a web that shows the activated skills, some examples and the last recognized commands: [alexa.amazon.com](http://alexa.amazon.com)
+   
 
 2. Set up Alexa skill and utterances : the developer has to go inside alexa developer console and create a new skill. As this is pretty straightforward, one of the main issues is connecting it to lambda service. First, the configuration was done by following the next tutorial: [https://developer.amazon.com/en-US/docs/alexa/devconsole/create-a-skill-and-choose-the-interaction-model.html](https://developer.amazon.com/en-US/docs/alexa/devconsole/create-a-skill-and-choose-the-interaction-model.html). At the end of the tutorial, this won't be connected to lambda service (to decide something other than Custom Skill, read: [https://developer.amazon.com/en-US/docs/alexa/ask-overviews/understanding-the-different-types-of-skills.html](https://developer.amazon.com/en-US/docs/alexa/ask-overviews/understanding-the-different-types-of-skills.html)).
 3. Configure Amazon lambda service: this tutorial at [medium.com](http://medium.com) is excellent; anyone should understand the code associated ([here](https://medium.com/coinmonks/how-to-develop-an-amazon-alexa-skill-using-node-js-b872ef5320b1)). After all the setup, a dveloper has to zip all (index and node_modules) and go to aws developer console (this is also in the tutorial), create the lambda service and upload the zip.  It is very important to generate the Alexa Skills Kit Trigger, as this will generate the end point for the service. Config will need the skill id, that is found on Alexa Developer Console (inside the skill), on Endpoint section. This id will go into the trigger, and finally the trigger will output a "ARN" address. The ARN address has to be set on Alexa Endpoint to connect alexa skill with lambda service (tutorial is excellent for this as Amazon fails to provide something as clear).
