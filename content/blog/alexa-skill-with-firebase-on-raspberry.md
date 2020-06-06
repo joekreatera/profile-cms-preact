@@ -37,7 +37,7 @@ From a general perspective, what the entire solution does is:
 7. Togo app will set those events in Firebase as "consumed".
 8. Specific code will deal with each of the events.
 
-![/assest/togo%20Untitled.png](/assest/togo%20Untitled.png)
+![/assets/togo%20Untitled.png](/assets/togo%20Untitled.png)
 
 ## Process
 
@@ -45,7 +45,7 @@ The project's development was divided into two teams: Coding & Electronics, and 
 
 A diagram of the solution is presented:
 
-![/assest/togo%20Untitled%201.png](/assest/togo%20Untitled%201.png)
+![/assets/togo%20Untitled%201.png](/assets/togo%20Untitled%201.png)
 
 It should be clear that for every component in the Cloud, there is a client that should be configured.
 
@@ -54,13 +54,13 @@ With this definition given, development was oficially started and followed the f
 1. Test Amazon SDK and raspberry integration
     1. *Installed a Windows test with instructions provided directly from Amazon* ([instructions here](https://developer.amazon.com/en-US/docs/alexa/avs-device-sdk/windows-64.html)): the first challenge was to understand the Amazon Alexa Solution components. Reader can analyze a diagram on this section (really helpful as this is hard to find on web). Cygwin environment was needed as Amazon has the process for a linux based computer (easy and you can go forward with no issues). A certain minor setback is taking the config.json key from Amazon website ([here](https://developer.amazon.com/en-US/docs/alexa/alexa-voice-service/register-a-product.html)). Any folk implementing this could make the process before or after installing cygwin, but must be prior to hitting the "MAKE" command to build Alexa Base Listener.
 
-        ![/assest/togo%20Untitled%202.png](/assest/togo%20Untitled%202.png)
+        ![/assets/togo%20Untitled%202.png](/assets/togo%20Untitled%202.png)
 
         alexa and developer components. Order in which they are called.
 
         One of the problems encountered was that instructions specifies that one should wait for this screen:
 
-        ![/assest/togo%20Untitled%203.png](/assest/togo%20Untitled%203.png)
+        ![/assets/togo%20Untitled%203.png](/assets/togo%20Untitled%203.png)
 
         But the text just goes by giving a screen of "can't connect yet". So, whenever a developer wants to find the code, he should scroll in search of this segment.
 
@@ -97,7 +97,7 @@ With this definition given, development was oficially started and followed the f
     So each class defined above will check the "order" sent by alexa and, if developer explicitely defines it, will respond to that intent.
     The name at Alexa Amazon Developer Console set for the Intent, is the one that shpuld be checked at code:
 
-    ![/assest/togo%20Untitled%204.png](/assest/togo%20Untitled%204.png)
+    ![/assets/togo%20Untitled%204.png](/assets/togo%20Untitled%204.png)
 
     In this case "HelloWorldIntent" , should have a class (conveniently named **HelloWordIntentHandler**) that will set up code to check the IntentName:
 
@@ -120,23 +120,23 @@ With this definition given, development was oficially started and followed the f
 
     Callback function canHandle will let AlexaSkillsKit the this class can responde to HelloWorldIntent. After that, ASK CORE will call  `handle(handlerInput)` passing some of the Alexa Developer Console defined parameters through function parameters. This is especially useful when requiring a type of VARIABLE to be recognized such as names, dates, or numbers. This technique is called SLOTS  and there are a ton of them: [https://developer.amazon.com/en-US/docs/alexa/custom-skills/slot-type-reference.html](https://developer.amazon.com/en-US/docs/alexa/custom-skills/slot-type-reference.html). This is a voice-interface-design consideration, and while is very easy to set, it might be difficult to decide which one. From Amazon developer console the developer has to set the slot in the specific utterance:
 
-    ![/assest/togo%20Untitled%205.png](/assest/togo%20Untitled%205.png)
+    ![/assets/togo%20Untitled%205.png](/assets/togo%20Untitled%205.png)
 
-    ![/assest/togo%20Untitled%206.png](/assest/togo%20Untitled%206.png)
+    ![/assets/togo%20Untitled%206.png](/assets/togo%20Untitled%206.png)
 
     After that (it is very easy to create the slot, and just below you have to define a type), a developer should always Save the Model and Build the Model. This will set it up for calling.
 
 5. Test the skill: To set the skill and check wether is functioning or not, it must be activated on amazon alexa USER APP.  The developers went on to: [alexa.amazon.com](http://alexa.amazon.com/) and inside "SKILLS" section there is a top right small button that will list USER SKILLS.
 
-    ![/assest/togo%20Untitled%207.png](/assest/togo%20Untitled%207.png)
+    ![/assets/togo%20Untitled%207.png](/assets/togo%20Untitled%207.png)
 
-    ![/assest/togo%20Untitled%208.png](/assest/togo%20Untitled%208.png)
+    ![/assets/togo%20Untitled%208.png](/assets/togo%20Untitled%208.png)
 
     Inside the section, there's a section (third from the right) that will list the Developer Skills. The user has Click on it, and inside this section, ACTIVATE IT.
 
-    ![/assest/togo%20Untitled%209.png](/assest/togo%20Untitled%209.png)
+    ![/assets/togo%20Untitled%209.png](/assets/togo%20Untitled%209.png)
 
-    ![/assest/togo%20Untitled%2010.png](/assest/togo%20Untitled%2010.png)
+    ![/assets/togo%20Untitled%2010.png](/assets/togo%20Untitled%2010.png)
 
     If a developer wants to try, at first, it might do nothing, or the orders won't appear to be being received. The HOME section on the very first part of the alexa site has the calls. The problem is that if the service has some type of problem, the "CARD" will not show.
 
@@ -144,7 +144,7 @@ With this definition given, development was oficially started and followed the f
 
     Inside lambda service, there is a tab called MONITORING
 
-    ![/assest/togo%20Untitled%2011.png](/assest/togo%20Untitled%2011.png)
+    ![/assets/togo%20Untitled%2011.png](/assets/togo%20Untitled%2011.png)
 
     Inside, there is a Recent Invocations sector, that will show any codeing error or the `console.log()` calls.
 
@@ -152,7 +152,7 @@ With this definition given, development was oficially started and followed the f
 
 7. Generated database that would hold Alexa Orders: On Firestore, the necessary catalogued where generated.
 
-    ![/assest/togo%20Untitled%2012.png](/assest/togo%20Untitled%2012.png)
+    ![/assets/togo%20Untitled%2012.png](/assets/togo%20Untitled%2012.png)
 
     Main structure used (other collections are just for future releases) :
 
@@ -161,11 +161,11 @@ With this definition given, development was oficially started and followed the f
 
     Events collection is like this:
 
-    ![/assest/togo%20Untitled%2013.png](/assest/togo%20Untitled%2013.png)
+    ![/assets/togo%20Untitled%2013.png](/assets/togo%20Untitled%2013.png)
 
     Routines collections appears like this:
 
-    ![/assest/togo%20Untitled%2014.png](/assest/togo%20Untitled%2014.png)
+    ![/assets/togo%20Untitled%2014.png](/assets/togo%20Untitled%2014.png)
 
 8. Set up Amazon polly service: As Togo needed to talk, Amazon Polly was the weapon of choice. Configuring it is pretty straightforward with specific attention to permissions. This tutorial was followed: [MEDIUM](https://medium.com/better-programming/text-to-speech-build-apps-that-talk-with-aws-polly-and-node-js-a9cdab99af04)
 9. Set up code access on final togo code: each of the services would need their own config file for user auth and recognition. Each of the files were set on development machine.
@@ -203,9 +203,9 @@ for a graphical detail, data model and very general sequence diagram: [https://a
 
 Maybe the first great principle of all coding challenges is "DEFINE THE REQUIREMENTS". For this project in particular, a chart was done with some critical and wanted features.
 
-![/assest/togo%20Untitled%2015.png](/assest/togo%20Untitled%2015.png)
+![/assets/togo%20Untitled%2015.png](/assets/togo%20Untitled%2015.png)
 
-![/assest/togo%20Untitled%2016.png](/assest/togo%20Untitled%2016.png)
+![/assets/togo%20Untitled%2016.png](/assets/togo%20Untitled%2016.png)
 
 The development team wants to show that this was done at different stages in the project, names might have changed but objectives and implementation keeps the same
 
@@ -213,15 +213,15 @@ The development team wants to show that this was done at different stages in the
 
 With those requirements defined, there was a general main algorithm defined:
 
-![/assest/togo%20Untitled%2017.png](/assest/togo%20Untitled%2017.png)
+![/assets/togo%20Untitled%2017.png](/assets/togo%20Untitled%2017.png)
 
 A general loop based on timeouts and intervals was defined in order to manage some async code as firebase. The SynFunction controls the state in which the app is:
 
-![/assest/togo%20Untitled%2018.png](/assest/togo%20Untitled%2018.png)
+![/assets/togo%20Untitled%2018.png](/assets/togo%20Untitled%2018.png)
 
 And the general query asks the database for the latests events:
 
-![/assest/togo%20Untitled%2019.png](/assest/togo%20Untitled%2019.png)
+![/assets/togo%20Untitled%2019.png](/assets/togo%20Untitled%2019.png)
 
 Basically, what this is doing is asking for all the events. Once it has obtained them, set the desired state according to what Alexa sent to Firebase. If is a routine, there's an extra step in which the system will get the activity routine from firebase (as this is a feature in which the parent would be able to change, add remove tasks of an activity from a webapp) . Afterwards, Togo will enter on activity_check state that just keeps asking the limit switch (placed on the head of the object) wether it has been pressed.
 
