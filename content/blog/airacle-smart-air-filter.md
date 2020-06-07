@@ -125,3 +125,6 @@ This project's website is [http://airacle.com.mx](http://airacle.com.mx) and Sun
 I hope this setup, project and demo helps other people to generate as fast as possible a similar implementation, or maybe some ther stuff much more complicated.
 
 Thanks for reading!
+
+![/assets/joeLogoStroke.png](/assets/joeLogoStroke.png)
+
