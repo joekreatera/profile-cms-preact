@@ -4,8 +4,6 @@ date: 2020-06-07T01:22:43.649Z
 subtitle: Difficult times require trascendental measures
 tags: arduino neopixel sensors virus micron
 ---
-# Airacle: Smart Air Filter
-
 On times of COVID19 and cleanliness exacerbation, a group of people did think of an idea that just might help a lot of people. These guys came and proposed an AirFilter project, nonetheless it had a twist, some uv inside, modular addenda,  and wifi connection to develop (towards future) machine learning algorithms.
 
 Thinking about it, all the people in the world should have one on those systems. It would be so helpful to air control, pollution and sickness control.  Actually one of the problems are the costs implied by some of the components, and the other one is the size required to clean a place in certain time.
